@@ -5,12 +5,15 @@
             text-align: center;
             font-size: 32px;
             margin-bottom: 26px;
-            color: #1B1B1B;
+            color: $gray-1B;
             font-weight: 700;
         }
         &_wrapper {
             padding: 25px 40px;
             background-image: url(../img/about-bg.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             p {
                 font-size: 24px;
             } 
@@ -21,10 +24,27 @@
                 font-weight: 500;
             }
         }
+        @media screen and (max-width: 575px) {
+            margin-bottom: 30px;
+            h2 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            &_wrapper {
+                padding: 10px 10px 20px;
+                p {
+                    font-size: 15px;
+                } 
+                .btn {
+                    font-size: 17px;
+                    margin: 15px auto 0;
+                }
+            }
+            
+        }
     }
     &-core {
         max-width: 1650px;
-        // padding: 0 ;
         position: relative;
         margin: 0 auto 50px;
         &_map {
@@ -54,7 +74,7 @@
             width: 380px;
             p {
                 font-size: 24px;
-                color: #1B1B1B;
+                color: $gray-1B;
             }
             &.color {
                 &-red {
@@ -80,10 +100,9 @@
                 }
                 &-green {
                     bottom: 12.5%;
-                    // left: 12%;
                     right: 65%;
                     .about-core_title {
-                        background-color: #6BA614;
+                        background-color: $green;
                     }
                 }
                 &-purple {
@@ -299,6 +318,37 @@
         }
         p {
             font-size: 40px;
+        }
+        @media screen and (max-width: 1199px) {
+            h2 {
+                font-size: 46px;
+            }
+            p {
+                font-size: 32px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            p {
+                margin-bottom: 40px;
+                text-align: center;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            .container {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            h2 {
+                font-size: 24px;
+                padding-bottom: 10px;
+                margin-bottom: 12px;
+                border-width: 2px;
+            }
+            p {
+                margin-bottom: 12px;
+                font-size: 17px;
+                font-weight: 700;
+            }
         }
     }
 }

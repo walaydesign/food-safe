@@ -12,7 +12,7 @@
         &_item {
             padding-top: 40px;
             padding-bottom: 60px;
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid $black;
             position: relative;
             &::before, &::after {
                 position: absolute;
@@ -20,7 +20,7 @@
                 width: 5px;
                 height: 5px;
                 border-radius: 50%;
-                background-color: #000;
+                background-color: $black;
                 bottom: 0;
                 transform: translateY(50%);
             }
@@ -43,7 +43,7 @@
             gap: 20px;
             padding: 20px;
             border-radius: 10px;
-            background-color: #FFE8E8;
+            background-color: $third;
             margin-bottom: 35px;
             img {
                 width: 42px;
@@ -101,11 +101,72 @@
             padding: 10px;
             background-color: #FFD37B;
             font-size: 24px;
-            color: #1B1B1B;
+            color: $gray-1B;
             h4 {
                 font-size: 24px;
                 font-weight: 700;
                 margin-bottom: 15px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            &_content {
+                display: block;
+            }
+            &_pic {
+                width: 100%;
+                padding-bottom: 68%;
+                margin-bottom: 15px;
+            }
+            &_text {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            margin-bottom: 32px;
+            h2 {
+                padding-bottom: 10px;
+                border-width: 2px;
+                font-size: 18px;
+            }
+            &_item {
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+            &_title {
+                gap: 6px;
+                padding: 10px;
+                border-radius: 6px;
+                margin-bottom: 12px;
+                img {
+                    width: 34px;
+                }
+                h3 {
+                    font-size: 16px;
+                }
+            }
+            &_pic {
+                margin-bottom: 16px;
+            }
+            &_text {
+                ul {
+                    li {
+                        padding-left: 30px;
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                        &::before {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+            }
+            &_strength {
+                font-size: 16px;
+                h4 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
             }
         }
     }
@@ -114,7 +175,7 @@
         h2 {
             margin-bottom: 55px;
             text-align: center;
-            color: #1B1B1B;
+            color: $gray-1B;
             font-size: 32px;
             font-weight: 700;
         }
@@ -130,18 +191,18 @@
             p {
                 text-align: center;
                 font-size: 24px;
-                color: #000;
+                color: $black;
             }
             &.color {
                 &-red {
                     .service-why_circle {
                         svg {
                             path {
-                                fill: #ED2F3C;
+                                fill: $red;
                             }
                         }
                         h3 {
-                            color: #ED2F3C;
+                            color: $red;
                         }
                         &::before {
                             background-image: url(../img/half-circle-red.svg);
@@ -152,11 +213,11 @@
                     .service-why_circle {
                         svg {
                             path {
-                                fill: #FF7206;
+                                fill: $orange;
                             }
                         }
                         h3 {
-                            color: #FF7206;
+                            color: $orange;
                         }
                         &::before {
                             background-image: url(../img/half-circle-orange.svg);
@@ -167,11 +228,11 @@
                     .service-why_circle {
                         svg {
                             path {
-                                fill: #0078BD;
+                                fill: $blue;
                             }
                         }
                         h3 {
-                            color: #0078BD;
+                            color: $blue;
                         }
                         &::before {
                             background-image: url(../img/half-circle-blue.svg);
@@ -182,11 +243,11 @@
                     .service-why_circle {
                         svg {
                             path {
-                                fill: #6BA614;
+                                fill: $green;
                             }
                         }
                         h3 {
-                            color: #6BA614;
+                            color: $green;
                         }
                         &::before {
                             background-image: url(../img/half-circle-green.svg);
@@ -231,6 +292,53 @@
                 left: -48px;
             }
         }
+        @media screen and (max-width: 991px) {
+            &_item {
+                margin-bottom: 100px;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            padding-bottom: 0;
+            h2 {
+                margin-bottom: 60px;
+                font-size: 24px;
+            }
+            &_item {
+                margin-bottom: 60px;
+                p {
+                    font-size: 20px;
+                }
+            }
+            .row {
+                >div {
+                    &:last-child {
+                        .service-why_item {
+                            margin-bottom: 25px;
+                        }
+                    }
+                }
+            }
+            &_circle {
+                width: 152px;
+                height: 152px;
+                margin: 0 auto 16px;
+                gap: 12px;
+                svg {
+                    width: 45px;
+                    height: 45px;
+                }
+                h3 {
+                    font-size: 20px;
+                    height: auto;
+                }
+                &::before {
+                    width: calc(100% + 68px);
+                    height: calc((100% + 68px) / 2);
+                    top: -25px;
+                    left: -34px;
+                }
+            }
+        }
     }
     &-more {
         text-align: center;
@@ -245,6 +353,55 @@
             margin: 0 auto;
             padding: 10px 40px;
             font-size: 24px;
+        }
+        .service-arrow {
+            margin: 0 auto 25px;
+            width: 55px;
+            height: 55px;
+            padding: 0;
+            &__inner {
+                border-width: 8px !important;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            padding-bottom: 50px;
+            h2 {
+                font-size: 24px;
+                margin-bottom: 18px;
+            }
+            .btn {
+                padding: 10px 35px;
+                font-size: 20px;
+            }
+        }
+    }
+    &-arrow {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: $white;
+        padding: 10px;
+        &_inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 8px solid #E8E8E8;
+            background-color: $white;
+            border-radius: 50%;
+            img {
+                width: 38px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            padding: 5px;
+            &_inner {
+                border-width: 4px;
+                img {
+                    width: 19px;
+                }
+            }
         }
     }
 }

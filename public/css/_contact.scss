@@ -32,8 +32,8 @@
             p {
                 padding: 16px;
                 border-radius: 2px;
-                background-color: #F7F7F7;
-                color: #242424;
+                background-color: $gray-F7;
+                color: $gray-24;
                 width: calc(100% - 82px - 12px);
             }
         }
@@ -51,7 +51,7 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background-color: #FFE8E8;
+            background-color: $third;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,13 +87,13 @@
                 font-weight: 500;
             }
             input, textarea {
-                background-color: #F7F7F7;
+                background-color: $gray-F7;
                 padding: 16px;
                 height: 57px;
                 border-radius: 2px;
                 width: 100%;
                 &::placeholder {
-                    color: #C5C5C5;;
+                    color: #C5C5C5;
                 }
             }
             textarea {
@@ -106,5 +106,79 @@
             display: flex;
             padding: 10px 45px;
         }
+    }
+    @media screen and (max-width: 991px) {
+        &_form {
+            padding-top: 40px;
+            border-top: 1px solid $black;
+            position: relative;
+            margin-top: 40px;
+            &::before, &::after {
+                position: absolute;
+                content: "";
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $black;
+                top: 0;
+                transform: translateY(-50%);
+            }
+            &::before {
+                left: -5px;
+            }
+            &::after {
+                right: -5px;
+            }
+
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &_map {
+            margin-bottom: 16px;
+        }
+        &_info {
+            margin-bottom: 12px;
+            &_item {
+                margin-bottom: 12px;
+                p {
+                    padding: 10px;
+                    width: calc(100% - 74px - 12px);
+                }
+            }
+            &_icon {
+                width: 24px;
+                height: 24px;
+                >svg {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+        &_line {
+            align-items: flex-start;
+            gap: 12px;
+        }
+        &_form {
+            &_item {
+                margin-bottom: 16px;
+                label {
+                    margin-bottom: 8px;
+                    font-size: 16px;
+                }
+                input, textarea {
+                    padding: 8px 16px;
+                    height: 40px;
+                }
+                textarea {
+                    height: 110px;
+                }
+    
+            }
+            .btn {
+                margin: 0 auto;
+                padding: 10px 30px;
+            }
+        }
+
     }
 }

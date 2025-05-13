@@ -95,7 +95,7 @@
                 font-size: 24px;
                 margin: 0;
                 font-weight: 700;
-                color: #000;
+                color: $black;
             }
         }
         &_pic {
@@ -117,29 +117,11 @@
             left: 0;
             bottom: 0;
         }
-        &_arrow {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            background-color: $white;
-            padding: 10px;
+        .service-arrow {
             position: absolute;
             left: 50%;
             bottom: 0;
             transform: translate(-50%, 50%);
-            &_inner {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 8px solid #E8E8E8;
-                background-color: $white;
-                border-radius: 50%;
-                img {
-                    width: 38px;
-                }
-            }
         }
     }
     @media screen and (max-width: 1340px) {
@@ -219,16 +201,9 @@
                     font-size: 14px;
                 }
             }
-            &_arrow {
-                width: 55px;
-                height: 55px;
-                padding: 5px;
-                &_inner {
-                    border-width: 4px;
-                    img {
-                        width: 19px;
-                    }
-                }
+            .service-arrow {
+                width: 45px;
+                height: 45px;
             }
         }
         
@@ -384,7 +359,7 @@
             left: calc(50% - 575px);
             .value_title {
                 h4 {
-                    color: #ED2F3C;
+                    color: $red;
                 }
             }
         }
@@ -394,11 +369,11 @@
             .value_title {
                 svg {
                     path {
-                        fill: #F79537;
+                        fill: $yellow;
                     }
                 }
                 h4 {
-                    color: #F79537;
+                    color: $yellow;
                 }
             }
         }
@@ -408,11 +383,11 @@
             .value_title {
                 svg {
                     path {
-                        fill: #6BA614;
+                        fill: $green;
                     }
                 }
                 h4 {
-                    color: #6BA614;
+                    color: $green;
                 }
             }
         }
@@ -422,11 +397,11 @@
             .value_title {
                 svg {
                     path {
-                        fill: #0078BD;
+                        fill: $blue;
                     }
                 }
                 h4 {
-                    color: #0078BD;
+                    color: $blue;
                 }
             }
         }
@@ -485,16 +460,16 @@
                 font-size: 16px;
             }
             &-red {
-                border-color: #ED2F3C;
+                border-color: $red;
             }
             &-yellow {
-                border-color: #F79537;
+                border-color: $yellow;
             }
             &-green {
-                border-color: #6BA614;
+                border-color: $green;
             }
             &-blue {
-                border-color: #0078BD;
+                border-color: $blue;
             }
         }
         &_title {

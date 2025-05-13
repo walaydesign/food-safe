@@ -2,13 +2,23 @@
 
 $primary: #EF3737;
 $secondary: #FF4242;
+$third: #FFE8E8;
 $white: #fff;
 $dark: #222222;
 $gray-E1: #E1E1E1;
 $dark-1D: #1D1D1D;
 $dark-2A: #2A2A2A;
-$font-lalezar: "Lalezar", serif;
-$font-workSans: "Work Sans", serif;
+$gray-CD: #CDCDCD;
+$gray-79: #797979;
+$gray-F7: #F7F7F7;
+$gray-24: #242424;
+$gray-1B: #1B1B1B;
+$black: #000;
+$green: #6BA614;
+$red: #ED2F3C;
+$orange: #FF7206;
+$blue: #0078BD;
+$yellow: #F79537;
 $transition: 0.3s;
 
 body {
@@ -56,10 +66,8 @@ img {
 
 .main {
     padding-top: 100px;
+    overflow: hidden;
     @media screen and (max-width: 991px) {
-        padding-top: 70px;
-    }
-    @media screen and (max-width: 767px) {
         padding-top: 50px;
     }
 }
@@ -131,7 +139,7 @@ img {
         &_active { 
             padding: 6px 13px 6px 6px;
             border-radius: 100px;
-            border: 1px solid #CDCDCD;
+            border: 1px solid $gray-CD;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -149,7 +157,7 @@ img {
             }
             span {
                 font-size: 18px;
-                color: #000;
+                color: $black;
             }
         }
         ul {
@@ -157,16 +165,16 @@ img {
             min-width: 100%;
             top: calc(100% + 4px);
             border-radius: 14px;
-            border: 1px solid #CDCDCD;
+            border: 1px solid $gray-CD;
             display: none;
             background-color: $white;
             a {
                 padding: 10px 6px;
-                border-bottom: 1px solid #CDCDCD;
+                border-bottom: 1px solid $gray-CD;
                 transition: $transition;
                 &:hover, &.active {
                     span {
-                        color: #FF4242;
+                        color: $secondary;
                         font-weight: 700;
                     }
                 }
@@ -221,7 +229,6 @@ img {
         }
     }
     @media screen and (max-width: 1199px) {
-        height: 50px;
         >.container {
             height: 100%;
         }
@@ -248,10 +255,10 @@ img {
                     margin: 0 auto;
                     z-index: 0;
                     font-size: 18px;
-                    color: #fff;
+                    color: $white;
                     position: relative;
                     &.active {
-                        color: #fff;
+                        color: $white;
                         &::after {
                             opacity: 1;
                         }
@@ -275,12 +282,16 @@ img {
             }
         }
         &::after {
-            width: calc(20px + 50px / tan(50deg));
+            width: calc(20px + 100px / tan(50deg));
         }
     }
     @media screen and (max-width: 991px) {
+        height: 50px;
         .container {
             max-width: inherit;
+        }
+        &::after {
+            width: calc(20px + 50px / tan(50deg));
         }
     }
 
@@ -323,52 +334,24 @@ img {
             }
         }
     }
-    @media screen and (max-width: 1399px) {
-        &_text {
-            &_en {
-                font-size: 100px;
-            }
-            &_ch {
-                font-size: 24px;
-            }
-        }
-    }
     @media screen and (max-width: 991px) {
-        padding: 50px 0;
-        z-index: 0;
-        &_bg {
-            z-index: -1;
-        }
-        &_text {
-            position: static;
-            transform: none;
-            &_en {
-                margin: 0 auto;
-            }
-            &_ch {
-                text-align: center;
-            }
-        }
+        padding-bottom: 25%;
     }
     @media screen and (max-width: 767px) {
-        &_text {
-            &_en {
-                font-size: 80px;
-            }
-            &_ch {
-                margin-top: -15px;
+        h1 {
+            font-size: 30px;
+            &::before {
+                height: 35px;
             }
         }
     }
     @media screen and (max-width: 575px) {
-        padding: 25px 0;
-        &_text {
-            &_en {
-                font-size: 30px;
-            }
-            &_ch {
-                font-size: 14px;
-                margin: 0;
+        h1 {
+            font-size: 20px;
+            padding-left: 10px;
+            &::before {
+                height: 20px;
+                width: 1px;
             }
         }
     }
@@ -417,12 +400,12 @@ img {
         li {
             &::after {
                 font-size: 12px;
-                color: #797979;
+                color: $gray-79;
             }
         }
         a {
             font-size: 12px;
-            color: #797979;
+            color: $gray-79;
         }
     }
 }
